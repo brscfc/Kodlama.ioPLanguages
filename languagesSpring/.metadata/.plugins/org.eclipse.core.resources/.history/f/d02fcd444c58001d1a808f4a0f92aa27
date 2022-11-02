@@ -1,0 +1,88 @@
+package kodlama.io.springTask.business.concretes;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import kodlama.io.springTask.business.abstracts.PLService;
+import kodlama.io.springTask.dataAccess.abstracts.PLRepository;
+import kodlama.io.springTask.entities.concretes.ProgrammingLanguage;
+@Service
+public class PLManager implements PLService {
+	private PLRepository pLRepository;
+
+	@Autowired
+
+	public PLManager(PLRepository pLRepository) {
+		this.pLRepository = pLRepository;
+
+	}
+
+	private boolean isNameExist(ProgrammingLanguage pLanguage) throws Exception {
+		for (ProgrammingLanguage pLanguage2 : pLRepository.getAll()) {
+			if (pLanguage2.getName().equals(pLanguage.getName())) {
+				return true;
+			}
+			if (pLanguage.getName().isEmpty()) {
+				throw new Exception("Kurs ismi boş geçilemez.");
+			}
+		}
+		return false;
+
+	}
+
+	private boolean isIdExist(int id) {
+		for (ProgrammingLanguage pLanguage2 : pLRepository.getAll()) {
+			if (pLanguage2.getId() == id) {
+				return true;
+			}
+		}
+		return false;
+
+	}
+
+	@Override
+	public List<ProgrammingLanguage> getAll() {
+		return pLRepository.getAll();
+	}
+
+	@Override
+	public ProgrammingLanguage getById(int id) {
+		return pLRepository.getById(id);
+	}
+
+	@Override
+	public void add(ProgrammingLanguage pLanguage) throws Exception {
+
+		if (isNameExist(pLanguage)) {
+			throw new Exception("Kurs ismi tekrar edemez.");
+		}
+		if (isIdExist(pLanguage.getId())) {
+			throw new Exception("Kursun ID'si tekrar edemez.");
+		}
+
+		pLRepository.add(pLanguage);
+	}
+
+	@Override
+	public void delete(int id) throws Exception {
+		if (!isIdExist(id)) {
+			throw new Exception("Id bulunamadı");
+		}
+		pLRepository.delete(id);
+
+	}
+
+	@Override
+	public void update(ProgrammingLanguage pLanguage, int id) throws Exception {
+		if (!isIdExist(id)) {
+			throw new Exception("Id bulunamadı.");
+		}
+		if (isNameExist(pLanguage)) {
+			throw new Exception("İsim zaten mevcut");
+		}
+		pLRepository.update(pLanguage, id);
+	}
+
+}

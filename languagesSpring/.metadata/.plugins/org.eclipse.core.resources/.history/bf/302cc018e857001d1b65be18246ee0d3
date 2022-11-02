@@ -1,0 +1,5 @@
+package kodlama.io.springTask.webApi.controller;
+
+public class PLanguagesController {
+
+}

@@ -1,0 +1,5 @@
+package kodlama.io.springTask.business.abstracts;
+
+public interface PLService {
+
+}

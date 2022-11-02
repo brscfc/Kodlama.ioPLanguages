@@ -1,0 +1,15 @@
+package kodlama.io.springTask.business.abstracts;
+
+import java.util.List;
+
+import kodlama.io.springTask.entities.concretes.ProgrammingLanguage;
+
+public interface PLService {
+	List<ProgrammingLanguage> getAll();
+	ProgrammingLanguage getById(int id);
+	void add (ProgrammingLanguage pLanguage) throws Exception;
+	void delete (int id);
+	void update(ProgrammingLanguage pLanguage);
+	
+
+}

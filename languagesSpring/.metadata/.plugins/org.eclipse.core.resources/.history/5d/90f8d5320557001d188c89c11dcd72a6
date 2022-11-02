@@ -1,0 +1,5 @@
+package kodlama.io.springTask.entities.concretes;
+
+public class SoftwareLanguages {
+
+}

@@ -1,0 +1,46 @@
+package kodlama.io.springTask.business.concretes;
+
+import java.util.List;
+
+import kodlama.io.springTask.business.abstracts.PLService;
+import kodlama.io.springTask.dataAccess.abstracts.PLRepository;
+import kodlama.io.springTask.entities.concretes.ProgrammingLanguage;
+
+public class PLManager implements PLService {
+ private PLRepository pLRepository;
+	
+	public PLManager (PLRepository pLRepository) {
+		this.pLRepository = pLRepository;
+		
+	}
+
+
+	@Override
+	public List<ProgrammingLanguage> getAll() {
+		return  pLRepository.getAll();
+	}
+
+	@Override
+	public ProgrammingLanguage getById(int id) {
+		return pLRepository.getById(id);
+		
+	}
+
+	@Override
+	public void add(ProgrammingLanguage pLanguage) {	//iş bloğu manager sayfasındayız isterleri gir add kısmına.
+		
+	}
+
+	@Override
+	public void delete(int id) {
+		pLRepository.delete(id);
+		
+	}
+
+	@Override
+	public void update(ProgrammingLanguage pLanguage) {
+		pLRepository.update(pLanguage);
+	}
+
+	
+}

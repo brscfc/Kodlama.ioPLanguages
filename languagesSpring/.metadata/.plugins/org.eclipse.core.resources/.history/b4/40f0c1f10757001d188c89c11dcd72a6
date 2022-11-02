@@ -1,0 +1,7 @@
+package kodlama.io.springTask.dataAccess.concretes;
+
+import kodlama.io.springTask.dataAccess.abstracts.PLRepository;
+
+public class InMemoryPLRepository implements PLRepository {
+
+}

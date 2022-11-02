@@ -1,0 +1,5 @@
+package kodlama.io.springTask.business.concretes;
+
+public class PLManager {
+
+}

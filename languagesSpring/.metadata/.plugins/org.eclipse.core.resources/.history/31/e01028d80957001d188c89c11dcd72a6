@@ -1,0 +1,40 @@
+package kodlama.io.springTask.dataAccess.concretes;
+
+import java.util.List;
+
+import kodlama.io.springTask.dataAccess.abstracts.PLRepository;
+import kodlama.io.springTask.entities.concretes.ProgrammingLanguage;
+
+public class InMemoryPLRepository implements PLRepository {
+
+	@Override
+	public List<ProgrammingLanguage> pLanguage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(ProgrammingLanguage pLanguage) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(ProgrammingLanguage pLanguage) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(ProgrammingLanguage plLanguage) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ProgrammingLanguage getById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

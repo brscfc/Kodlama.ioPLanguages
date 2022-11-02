@@ -1,0 +1,5 @@
+package kodlama.io.springTask.dataAccess.abstracts;
+
+public interface PLRepository {
+
+}
